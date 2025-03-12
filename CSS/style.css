@@ -1,0 +1,402 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto Mono', monospace;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    color: #333;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #800020; /* Burgundy */
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+a {
+    color: #800020; /* Burgundy */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff6f61; /* Lighter burgundy */
+    text-decoration: underline;
+}
+
+/* Header Bar */
+#headerBar {
+    background-color: #800020; /* Burgundy */
+    color: white;
+    padding: 25px 0px; /* Adjusted padding */
+    display: flexbox;
+    justify-content: space-between; /* Ensure space between logo and nav */
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%; /* Ensure header takes up full width */
+}
+
+/* Make the menu fill the space evenly */
+#menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly; /* Spread items evenly across the available space */
+    flex-grow: 1; /* Allow the menu to take up remaining space */
+    align-items: center;
+    width: 100%; /* Ensure it takes the full width */
+}
+
+#menu li {
+    margin: 0;
+}
+
+#menu li a {
+    font-size: 1.1rem;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#menu li a:hover {
+    color: #ff6f61; /* Lighter burgundy */
+}
+
+/* Hero Section */
+#hero {
+    background: linear-gradient(to bottom, #800020, #333);
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#hero .hero-content h1 {
+    font-size: 4rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #fffae6; /* Soft off-white for better contrast */
+}
+
+#hero .hero-content p {
+    font-size: 1.3rem;
+    margin: 20px auto;
+    max-width: 800px;
+    color: #fffae6; /* Soft off-white for better contrast */
+}
+
+#hero .cta-btn {
+    background-color: #ff6f61; /* Lighter burgundy */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+#hero .cta-btn:hover {
+    background-color: #800020; /* Burgundy */
+    text-decoration: none;
+}
+
+/* About Me Section (Card Style) */
+#aboutMe {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+#aboutMe .about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+#aboutMe .about-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;  /* Adjusted padding */
+    width: 400px;  /* Increased width */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#aboutMe .about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#aboutMe img {
+    border-radius: 50%;
+    width: 180px;  /* Increased image size */
+    height: 180px; /* Increased image size */
+    object-fit: cover;
+    margin-bottom: 20px;
+    display: block; /* Centers the image */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#aboutMe h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+#aboutMe .about-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+#aboutMe #skatingTime {
+    color: #800020;
+}
+
+/* Projects Section */
+#projects {
+    padding: 60px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.project {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    max-width: 400px;
+    display: inline-block;
+    border-radius: 15px;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    color: #800020;
+}
+
+.project-info p {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.project-info ul {
+    list-style: none;
+    padding: 0;
+    color: #555;
+}
+
+.project-info ul li {
+    margin-bottom: 5px;
+}
+
+/* Thank You Section */
+#thank-you {
+    background: linear-gradient(to right, #ff6f61, #800020); /* Subtle gradient for background */
+    color: #fff; /* White text for contrast */
+    padding: 60px 20px;
+    text-align: center;
+    margin-top: 40px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+
+
+#thank-you h3 {
+    font-size: 2rem; /* Larger heading */
+    font-weight: 700;
+    color: #fff; /* Ensure it stands out against the background */
+    margin-bottom: 25px;
+    text-transform: uppercase; /* Uppercase for emphasis */
+    letter-spacing: 2px; /* Slight letter spacing for a modern look */
+}
+
+#thank-you p {
+    font-size: 1.3rem; /* Slightly larger paragraph */
+    line-height: 1.8;
+    color: #f4f4f4; /* Light grey text for better readability */
+    max-width: 800px;
+    margin: 0 auto 30px; /* Center the paragraph and add margin */
+    text-align: center;
+}
+
+#thank-you .cta-btn {
+    background-color: #fffae6; /* Light yellow for contrast */
+    color: #800020; /* Burgundy for consistency */
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px; /* Rounded button */
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none; /* Remove underline from link */
+    margin-top: 20px;
+}
+
+#thank-you .cta-btn:hover {
+    background-color: #800020; /* Darker burgundy on hover */
+    color: #fff; /* White text when hovered */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+#thank-you .cta-btn:focus {
+    outline: none; /* Remove the default focus outline */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Custom focus outline */
+}
+
+
+/* Contact Section */
+#contactMe {
+    background-color: #fff;
+    padding: 60px 20px;
+    flex-grow: 1; /* Allow contact section to expand */
+    min-height: 67.5vh;
+    display: flex;
+    align-items: center;
+}
+
+.contact-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#contactMe h2 {
+    font-size: 2.5rem;
+    color: #800020;
+    margin-bottom: 20px;
+}
+
+#contactMe p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    margin: 0 15px;
+    font-size: 1.5rem;
+    color: #800020;
+}
+
+.social-links a:hover {
+    color: #ff6f61; /* Lighter burgundy */
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #ffffff; /* Lighter grey for better contrast */
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1rem;
+}
+
+footer h3, p {
+    color: white;
+}
+
+footer a {
+    color: #eaeaea; /* Lighter grey for better contrast */
+}
+
+footer a:hover {
+    color: #ff6f61; /* Lighter burgundy */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 3rem;
+    }
+
+    #hero p {
+        font-size: 1rem;
+    }
+
+    .project {
+        max-width: 90%;
+    }
+
+    #contactMe form {
+        width: 100%;
+    }
+
+    #headerBar {
+        padding: 10px;
+    }
+
+    #menu li {
+        margin: 0 10px;
+    }
+}
+
+/* Hide Menu Button on Desktop */
+@media (min-width: 768px) {
+    #menu-toggle {
+        display: none;
+    }
+}

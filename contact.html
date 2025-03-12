@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jake Muirhead's web development portfolio - Contact Information">
+    <meta property="og:title" content="Jake Muirhead - Contact Me">
+    <meta property="og:description" content="Get in touch with Jake Muirhead for inquiries about web development projects, collaborations, and more.">
+    <title>Contact Me | Jake Muirhead Portfolio</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Source+Code+Pro:wght@400;600&display=swap">
+</head>
+<body>
+
+<header>
+    <div id="headerBar">
+        <button id="menu-toggle" aria-label="Toggle navigation menu">☰</button>
+        <nav>
+            <ul id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">My Projects</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section id="contactMe">
+        <div class="contact-container">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:jakemuirhead21@outlook.com">jakemuirhead21@outlook.com</a></p>
+            <p>Telephone: <a href="tel:+447908878381">07908 878381</a></p>
+
+            <h3>Social Media</h3>
+            <div class="social-links">
+                <a href="https://github.com/jakemuirhead" target="_blank" aria-label="GitHub Profile">GitHub</a>
+                <a href="https://www.linkedin.com/in/jakemuirhead/" target="_blank" aria-label="LinkedIn Profile">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Made With Love in Dawlish, Devon</p>
+</footer>
+
+<script>
+    document.getElementById("menu-toggle").addEventListener("click", function() {
+        document.getElementById("menu").classList.toggle("active");
+    });
+</script>
+
+</body>
+</html>

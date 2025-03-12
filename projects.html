@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jake Muirhead's web development portfolio - Projects">
+    <meta property="og:title" content="Jake Muirhead - My Projects">
+    <meta property="og:description" content="Showcasing Jake Muirhead's development projects, including burger builders, e-commerce websites, and more.">
+    <title>Projects | Jake Muirhead Portfolio</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Source+Code+Pro:wght@400;600&display=swap">
+</head>
+<body>
+
+<header>
+    <div id="headerBar">
+        
+        <button id="menu-toggle" aria-label="Toggle navigation menu">☰</button>
+        <nav>
+            <ul id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">My Projects</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Existing Projects Section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+
+        <!-- New Projects Added Section -->
+        <article class="project">
+            <img src="Media/Imgs/DaviesBurgerScreenshot.png" alt="Davie's Burgers custom burger builder interface" loading="lazy">
+            <div class="project-info">
+                <h3>Davie’s Burgers – Custom Burger Builder</h3>
+                <p>
+                    A <strong>responsive and interactive burger customization form</strong>, designed for an intuitive user experience. 
+                    This project showcases proficiency in <strong>HTML form elements, UX design, and responsive layouts.</strong>
+                </p>
+                <h3>Key Features:</h3>
+                <ul>
+                    <li><strong>Dynamic Form Inputs</strong> – Text fields for protein and sauce selection, a slider for doneness, and checkboxes for toppings.</li>
+                    <li><strong>Structured Selection</strong> – Radio buttons for cheese options and a dropdown for bun type ensure a smooth ordering process.</li>
+                    <li><strong>Enhanced User Experience</strong> – Clean layout with clear labels, spacing, and separators for readability.</li>
+                    <li><strong>Mobile-Friendly Design</strong> – Optimized for various screen sizes, ensuring seamless interaction on all devices.</li>
+                </ul>
+                <p>
+                    This project highlights expertise in <strong>form handling, user interface design, and accessibility</strong>, 
+                    making it a strong foundation for interactive web applications.
+                </p>
+            </div>
+        </article>
+
+        <article class="project">
+            <img src="Media/Imgs/dasmotos-ss.png" alt="Dasmoto's Arts & Crafts storefront showcasing art supplies" loading="lazy">
+            <div class="project-info">
+                <h3>Dasmoto’s Arts & Crafts – E-Commerce Storefront</h3>
+                <p>
+                    A <strong>visually engaging and structured web page</strong> designed to showcase various art supplies.  
+                    This project demonstrates expertise in <strong>HTML structure, CSS styling, and responsive design</strong>.
+                </p>
+                <h3>Key Features:</h3>
+                <ul>
+                    <li><strong>Clean and Modern UI</strong> – Intuitive layout with a categorized product display.</li>
+                    <li><strong>Product Showcase</strong> – Highlights brushes, frames, and paint with pricing.</li>
+                    <li><strong>Interactive Styling</strong> – Hover effects and improved readability.</li>
+                    <li><strong>Responsive Design</strong> – Optimized for desktops, tablets, and mobile screens.</li>
+                    <li><strong>Structured Footer</strong> – Includes contact details and business hours.</li>
+                </ul>
+                <p>
+                    This project is an excellent example of <strong>front-end web development, styling consistency, and UI/UX considerations</strong>,  
+                    making it a strong addition to any web development portfolio.
+                </p>
+            </div>
+        </article>
+
+        <article class="project">
+            <img src="Media/Imgs/CheatSheet-ss.png" alt="HTML and CSS Cheat Sheet layout example" loading="lazy">
+            <div class="project-info">
+                <h3>HTML and CSS Cheat Sheet</h3>
+                <p>
+                    This webpage serves as a <strong>comprehensive HTML and CSS reference</strong> guide for developers. It presents essential HTML tags and CSS properties in a clean, modern layout using a soft gray and burgundy/red color scheme.
+                </p>
+                <h3>Key Features:</h3>
+                <ul>
+                    <li><strong>Modern Layout</strong> – Clean, visually appealing design with a harmonious color palette.</li>
+                    <li><strong>Responsive Tables</strong> – Organized and easy-to-read tables for HTML tags and CSS properties.</li>
+                    <li><strong>Code Snippets</strong> – Real-world examples and code snippets for quick reference.</li>
+                    <li><strong>Interactive Elements</strong> – Styled buttons, forms, and hover effects for practical demonstrations.</li>
+                    <li><strong>Typography</strong> – Uses modern, legible fonts like 'Space Mono' and 'Fira Code'.</li>
+                </ul>
+                <p>
+                    Ideal for <strong>developers, web designers, and students</strong> seeking a quick reference guide to common HTML tags and CSS properties.
+                </p>
+            </div>
+        </article>
+    </section>
+
+    <section id="thank-you">
+        <h3>Thank you for checking out my projects!</h3>
+        <p>Thank you for taking the time to explore my work. Please feel free to check back soon as I continuously update my projects with new and exciting developments. Your feedback is always welcome!</p>
+        <a href="https://github.com/jakeMuirhead?tab=repositories" target="_blank" class="cta-btn">Explore More Projects</a>
+    </section>
+</main>
+
+<footer>
+    <p>Made With Love in Dawlish, Devon</p>
+    <p>Email: <a href="mailto:jakemuirhead21@outlook.com">jakemuirhead21@outlook.com</a></p>
+</footer>
+
+<script>
+    document.getElementById("menu-toggle").addEventListener("click", function() {
+        document.getElementById("menu").classList.toggle("active");
+    });
+</script>
+
+</body>
+</html>
