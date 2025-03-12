@@ -221,6 +221,7 @@ a:hover {
 
 .project-info {
     padding: 20px;
+    min-height: 65vh;
 }
 
 .project-info h3 {

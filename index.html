@@ -15,14 +15,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Source+Code+Pro:wght@400;600&display=swap">
+
     <!-- CSS Link -->
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
 
+    <!-- Header Section -->
     <header>
         <div id="headerBar">
-            
             <nav>
                 <ul id="menu">
                     <li><a href="index.html">Home</a></li>
@@ -33,69 +34,69 @@
         </div>
     </header>
 
-<main>
-    <!-- Hero Section -->
-    <section id="hero">
-        <div class="hero-content">
-            <h1>Hello, I'm Jake Muirhead</h1>
-            <p>I create engaging, accessible, and intuitive web applications and websites. Passionate about technology and development.</p>
-            <a href="projects.html" class="cta-btn">Learn More</a>
-        </div>
-    </section>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Hello, I'm Jake Muirhead</h1>
+                <p>I create engaging, accessible, and intuitive web applications and websites. Passionate about technology and development.</p>
+                <a href="projects.html" class="cta-btn">Learn More</a>
+            </div>
+        </section>
 
-    <!-- About Me Section (Card Style) -->
-    <section id="aboutMe">
-        <h2>About Me</h2>
-        <div class="about-container">
-            <a href="index.html" class="about-card">
-                <img src="Media/Imgs/profilePic.jpeg" alt="Jake Muirhead profile picture" loading="lazy">
-                <div class="about-text">
-                    <p>I'm a passionate web developer studying Level 3 Web/Software Development. My skills are in building interactive and user-friendly web applications.</p>
-                    <p>In my spare time, I enjoy skateboarding, and I advocate for preserving local skateparks in small towns.</p>
-                    <p>I've been skating for <span id="skatingTime">loading...</span> of experience.</p>
-                </div>
-            </a>
-        </div>
-    </section>
-</main>
+        <!-- About Me Section -->
+        <section id="aboutMe">
+            <h2>About Me</h2>
+            <div class="about-container">
+                <a href="index.html" class="about-card">
+                    <img src="Media/Imgs/profilePic.jpeg" alt="Jake Muirhead profile picture" loading="lazy">
+                    <div class="about-text">
+                        <p>I'm a passionate web developer studying Level 3 Web/Software Development. My skills are in building interactive and user-friendly web applications.</p>
+                        <p>In my spare time, I enjoy skateboarding, and I advocate for preserving local skateparks in small towns.</p>
+                        <p>I've been skating for <span id="skatingTime">loading...</span> of experience.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
 
-<footer>
-    <p>Made With Love in Dawlish, Devon</p>
-    <p>Email: <a href="mailto:jakemuirhead21@outlook.com">jakemuirhead21@outlook.com</a></p>
-</footer>
+    <footer>
+        <p>Made With Love in Dawlish, Devon</p>
+        <p>Email: <a href="mailto:jakemuirhead21@outlook.com">jakemuirhead21@outlook.com</a></p>
+    </footer>
 
-<script>
-// JavaScript function to track time since you started skating
-function updateTimeSince(startDate) {
-    const start = new Date(startDate); // Convert startDate to Date object
+    <!-- JavaScript to track time since starting skateboarding -->
+    <script>
+        function updateTimeSince(startDate) {
+            const start = new Date(startDate); // Convert startDate to Date object
 
-    function update() {
-        const now = new Date(); // Get current date and time
-        const diff = now - start; // Difference in milliseconds
+            function update() {
+                const now = new Date(); // Get current date and time
+                const diff = now - start; // Difference in milliseconds
 
-        // Convert time difference into readable format
-        const seconds = Math.floor(diff / 1000) % 60;
-        const minutes = Math.floor(diff / (1000 * 60)) % 60;
-        const hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24)) % 7;
-        const weeks = Math.floor(diff / (1000 * 60 * 60 * 24 * 7)) % 4;
-        const months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30.44)) % 12;
-        const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
+                // Convert time difference into readable format
+                const seconds = Math.floor(diff / 1000) % 60;
+                const minutes = Math.floor(diff / (1000 * 60)) % 60;
+                const hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24)) % 7;
+                const weeks = Math.floor(diff / (1000 * 60 * 60 * 24 * 7)) % 4;
+                const months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30.44)) % 12;
+                const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
 
-        // Format the output
-        const formattedTime = `${years} years, ${months} months, ${weeks} weeks, ${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
+                // Format the output
+                const formattedTime = `${years} years, ${months} months, ${weeks} weeks, ${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
 
-        // Insert into the HTML
-        document.getElementById("skatingTime").innerText = formattedTime;
-    }
+                // Insert into the HTML
+                document.getElementById("skatingTime").innerText = formattedTime;
+            }
 
-    // Update every second
-    setInterval(update, 1000);
-}
+            // Update every second
+            setInterval(update, 1000);
+        }
 
-// Start tracking time from when you started skating
-updateTimeSince("2013-06-28"); // Replace with your actual start date
-</script>
+        // Start tracking time from when you started skating
+        updateTimeSince("2013-06-28"); // Replace with your actual start date
+    </script>
 
 </body>
 </html>
