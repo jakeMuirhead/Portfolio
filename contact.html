@@ -12,15 +12,15 @@
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Source+Code+Pro:wght@400;600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Unna:ital,wght@0,400;0,700;1,400;1,700&family=Yuji+Syuku&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <!-- Header Section -->
     <header>
         <div id="headerBar">
-            <button id="menu-toggle" aria-label="Toggle navigation menu">☰</button>
             <nav>
+                <button id="menu-toggle" aria-label="Open Navigation Menu">☰</button>
                 <ul id="menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="projects.html">My Projects</a></li>
@@ -39,7 +39,7 @@
                 
                 <!-- Contact Information -->
                 <p>Email: <a href="mailto:jakemuirhead21@outlook.com">jakemuirhead21@outlook.com</a></p>
-                <p>Telephone: <a href="tel:+447908878381">07908 878381</a></p>
+                <p>Telephone: <a href="tel:+447908878381">+44 7908 878381</a></p>
 
                 <!-- Social Media Links -->
                 <h3>Social Media</h3>
@@ -53,13 +53,21 @@
 
     <!-- Footer Section -->
     <footer>
-        <p>Made with love in Dawlish, Devon</p>
+        <p>Made With Love in Dawlish, Devon</p>
+        <p>Email: <a href="mailto:jakemuirhead21@outlook.com">jakemuirhead21@outlook.com</a></p>
     </footer>
 
     <!-- Toggle Menu Script -->
     <script>
-        document.getElementById("menu-toggle").addEventListener("click", function() {
-            document.getElementById("menu").classList.toggle("active");
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menu-toggle");
+            const menu = document.getElementById("menu");
+
+            menuToggle.addEventListener("click", function() {
+                menu.classList.toggle("active");
+                const expanded = menu.classList.contains("active");
+                menuToggle.setAttribute("aria-expanded", expanded);
+            });
         });
     </script>
 

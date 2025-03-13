@@ -11,20 +11,21 @@
     <meta name="twitter:card" content="summary_large_image">
     <title>Jake Muirhead - Web Developer Portfolio</title>
 
-    <!-- Google Font Links -->
+    <!-- External CSS and Fonts -->
+    <link rel="stylesheet" href="CSS/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Source+Code+Pro:wght@400;600&display=swap">
-
-    <!-- CSS Link -->
-    <link rel="stylesheet" href="CSS/style.css">
-</head>
-<body>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Unna:ital,wght@0,400;0,700;1,400;1,700&family=Yuji+Syuku&display=swap" rel="stylesheet">
+    <!-- Menu Toggle JS-->
+    
+    </head>
+    <body>
 
     <!-- Header Section -->
     <header>
         <div id="headerBar">
             <nav>
+                <button id="menu-toggle" aria-label="Open Navigation Menu">☰</button>
                 <ul id="menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="projects.html">My Projects</a></li>
@@ -38,7 +39,7 @@
         <!-- Hero Section -->
         <section id="hero">
             <div class="hero-content">
-                <h1>Hello, I'm Jake Muirhead</h1>
+                <h1>Jake Muirhead</h1>
                 <p>I create engaging, accessible, and intuitive web applications and websites. Passionate about technology and development.</p>
                 <a href="#aboutMe" class="cta-btn">Learn More</a>
             </div>
@@ -53,9 +54,25 @@
                     <div class="about-text">
                         <p>I'm a passionate web developer studying Level 3 Web/Software Development. My skills are in building interactive and user-friendly web applications.</p>
                         <p>In my spare time, I enjoy skateboarding, and I advocate for preserving local skateparks in small towns.</p>
-                        <p>I've been skating for <span id="skatingTime">loading...</span> of experience.</p>
+                        <p>I've been skating for <span id="skatingTime">loading...</span>.</p>
                     </div>
                 </a>
+            </div>
+
+            <div class="cv-container">
+                <a href="Media/CV/Jake_Muirhead_CV.pdf" download class="cta-btn">Download My CV</a>
+            </div>
+        </section>
+
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>My Skills</h2>
+            <div class="skills-container">
+                <div class="skill-card">HTML5 & CSS3</div>
+                <div class="skill-card">JavaScript (ES6+)</div>
+                <div class="skill-card">Responsive Design</div>
+                <div class="skill-card">Web Accessibility</div>
             </div>
         </section>
     </main>
@@ -96,6 +113,18 @@
 
         // Start tracking time from when you started skating
         updateTimeSince("2013-06-28"); // Replace with your actual start date
+
+        /* Menu Toggle JS */
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menu-toggle");
+            const menu = document.getElementById("menu");
+
+            menuToggle.addEventListener("click", function() {
+                menu.classList.toggle("active");
+                const expanded = menu.classList.contains("active");
+                menuToggle.setAttribute("aria-expanded", expanded);
+            });
+        });
     </script>
 
 </body>

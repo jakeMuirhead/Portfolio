@@ -7,18 +7,20 @@
     <meta property="og:title" content="Jake Muirhead - My Projects">
     <meta property="og:description" content="Showcasing Jake Muirhead's development projects, including burger builders, e-commerce websites, and more.">
     <title>Projects | Jake Muirhead Portfolio</title>
+    
+    <!-- External CSS and Fonts -->
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Source+Code+Pro:wght@400;600&display=swap">
-</head>
-<body>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Unna:ital,wght@0,400;0,700;1,400;1,700&family=Yuji+Syuku&display=swap" rel="stylesheet">
+    </head>
+    <body>
 
     <!-- Header Section -->
     <header>
         <div id="headerBar">
-            <button id="menu-toggle" aria-label="Toggle navigation menu">☰</button>
             <nav>
+                <button id="menu-toggle" aria-label="Open Navigation Menu">☰</button>
                 <ul id="menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="projects.html">My Projects</a></li>
@@ -48,16 +50,19 @@
                 </div>
             </article>
 
-            <!-- Project 2: Dasmoto's Arts & Crafts -->
+            <!-- Project 2: Mixed Affirmations -->
             <article class="project">
-                <img src="Media/Imgs/dasmotos-ss.png" alt="Dasmoto's Arts & Crafts storefront showcasing art supplies" loading="lazy">
+                <img src="Media/Imgs/MixedAffirmations-SS.png" alt="Mixed Messages - Positive Affirmations Generator" loading="lazy">
                 <div class="project-info">
-                    <h3>Dasmoto’s Arts & Crafts – E-Commerce Storefront</h3>
-                    <p>A <strong>visually engaging and structured web page</strong> designed to showcase various art supplies.</p>
+                    <h3>Mixed Messages - Positive Affirmations Generator</h3>
+                    <p>A simple yet uplifting web app that generates random positive affirmations with a single button click.</p>
+                    
                     <h3>Key Features:</h3>
                     <ul>
-                        <li><strong>Clean and Modern UI</strong> – Intuitive layout with a categorized product display.</li>
-                        <li><strong>Responsive Design</strong> – Optimized for desktops, tablets, and mobile screens.</li>
+                        <li><strong>Random Affirmations</strong> – Creates unique motivational messages like 
+                            <em>"Jake, you will have a fantastic morning."</em></li>
+                        <li><strong>Clean, Playful UI</strong> – A soft green theme with whimsical fonts for a comforting experience.</li>
+                        <li><strong>Mobile-Friendly Design</strong> – Responsive layout ensures smooth interaction on any screen size.</li>
                     </ul>
                 </div>
             </article>
@@ -80,8 +85,23 @@
     </main>
 
     <footer>
-        <p>Made with love by Jake Muirhead. Email: <a href="mailto:jakemuirhead21@outlook.com">jakemuirhead21@outlook.com</a></p>
+        <p>Made With Love in Dawlish, Devon.</p>
+        <p>Email: <a href="mailto:jakemuirhead21@outlook.com">jakemuirhead21@outlook.com</a></p>
     </footer>
+
+    <!--Menu Toggle JS-->
+    <script>
+       document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menu-toggle");
+            const menu = document.getElementById("menu");
+
+            menuToggle.addEventListener("click", function() {
+                menu.classList.toggle("active");
+                const expanded = menu.classList.contains("active");
+                menuToggle.setAttribute("aria-expanded", expanded);
+            });
+        });
+    </script>
 
 </body>
 </html>
