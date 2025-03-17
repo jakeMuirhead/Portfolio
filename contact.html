@@ -2,10 +2,13 @@
 <html lang="en-GB">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Jake Muirhead's web development portfolio - Contact Information">
     <meta property="og:title" content="Jake Muirhead - Contact Me">
     <meta property="og:description" content="Get in touch with Jake Muirhead for inquiries about web development projects, collaborations, and more.">
+    <meta property="og:image" content="path-to-image.jpg">
+    <meta property="og:url" content="https://www.jakemuirheadportfolio.com/contact.html">
+    <meta name="twitter:card" content="summary_large_image">
     <title>Contact Me | Jake Muirhead Portfolio</title>
 
     <!-- External CSS and Fonts -->
@@ -20,7 +23,7 @@
     <header>
         <div id="headerBar">
             <nav>
-                <button id="menu-toggle" aria-label="Open Navigation Menu">☰</button>
+                <button id="menu-toggle" aria-label="Open Navigation Menu" aria-expanded="false">☰</button>
                 <ul id="menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="projects.html">My Projects</a></li>
@@ -58,18 +61,38 @@
     </footer>
 
     <!-- Toggle Menu Script -->
-    <script>
+    <script defer>
         document.addEventListener("DOMContentLoaded", function () {
             const menuToggle = document.getElementById("menu-toggle");
             const menu = document.getElementById("menu");
-
-            menuToggle.addEventListener("click", function() {
-                menu.classList.toggle("active");
-                const expanded = menu.classList.contains("active");
-                menuToggle.setAttribute("aria-expanded", expanded);
-            });
+    
+            if (menuToggle && menu) {
+                // Toggle menu on click of the hamburger button
+                menuToggle.addEventListener("click", function () {
+                    menu.classList.toggle("active");
+                    const expanded = menu.classList.contains("active");
+                    menuToggle.setAttribute("aria-expanded", expanded);
+                });
+    
+                // Close the menu when any link inside it is clicked
+                document.querySelectorAll("#menu li a").forEach(link => {
+                    link.addEventListener("click", function () {
+                        if (menu.classList.contains("active")) {
+                            menu.classList.remove("active");
+                            menuToggle.setAttribute("aria-expanded", "false");
+                        }
+                    });
+                });
+            }
+        });
+    
+        // Force Repaint Fix for Mobile Rendering Issues
+        window.addEventListener("load", function () {
+            document.body.style.display = "none";
+            document.body.offsetHeight; // Force reflow
+            document.body.style.display = "";
         });
     </script>
-
+    
 </body>
 </html>

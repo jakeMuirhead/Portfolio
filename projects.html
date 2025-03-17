@@ -2,10 +2,13 @@
 <html lang="en-GB">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Jake Muirhead's web development portfolio - Projects">
     <meta property="og:title" content="Jake Muirhead - My Projects">
     <meta property="og:description" content="Showcasing Jake Muirhead's development projects, including burger builders, e-commerce websites, and more.">
+    <meta property="og:image" content="path-to-image.jpg">
+    <meta property="og:url" content="https://www.jakemuirheadportfolio.com/projects.html">
+    <meta name="twitter:card" content="summary_large_image">
     <title>Projects | Jake Muirhead Portfolio</title>
     
     <!-- External CSS and Fonts -->
@@ -13,14 +16,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Unna:ital,wght@0,400;0,700;1,400;1,700&family=Yuji+Syuku&display=swap" rel="stylesheet">
-    </head>
-    <body>
+</head>
+<body>
 
     <!-- Header Section -->
     <header>
         <div id="headerBar">
             <nav>
-                <button id="menu-toggle" aria-label="Open Navigation Menu">☰</button>
+                <button id="menu-toggle" aria-label="Open Navigation Menu" aria-expanded="false">☰</button>
                 <ul id="menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="projects.html">My Projects</a></li>
@@ -39,7 +42,7 @@
             <article class="project">
                 <img src="Media/Imgs/DaviesBurgerScreenshot.png" alt="Davie's Burgers custom burger builder interface" loading="lazy">
                 <div class="project-info">
-                    <h3>Davie’s Burgers – Custom Burger Builder</h3>
+                    <h3>Davie's Burgers – Custom Burger Builder</h3>
                     <p>A <strong>responsive and interactive burger customization form</strong>, designed for an intuitive user experience.</p>
                     <h3>Key Features:</h3>
                     <ul>
@@ -50,33 +53,35 @@
                 </div>
             </article>
 
-            <!-- Project 2: Mixed Affirmations -->
+            <!-- Project: WorkAround Salary Insights -->
             <article class="project">
-                <img src="Media/Imgs/MixedAffirmations-SS.png" alt="Mixed Messages - Positive Affirmations Generator" loading="lazy">
+                <img src="Media/Imgs/SalaryCheck-ss.png" alt="WorkAround Salary Insights" loading="lazy">
                 <div class="project-info">
-                    <h3>Mixed Messages - Positive Affirmations Generator</h3>
-                    <p>A simple yet uplifting web app that generates random positive affirmations with a single button click.</p>
-                    
+                    <h3>WorkAround Salary Insights</h3>
+                    <p>An interactive web app that allows users to explore salary data for different tech industry roles and companies.</p>
+        
                     <h3>Key Features:</h3>
                     <ul>
-                        <li><strong>Random Affirmations</strong> – Creates unique motivational messages like 
-                            <em>"Jake, you will have a fantastic morning."</em></li>
-                        <li><strong>Clean, Playful UI</strong> – A soft green theme with whimsical fonts for a comforting experience.</li>
-                        <li><strong>Mobile-Friendly Design</strong> – Responsive layout ensures smooth interaction on any screen size.</li>
+                        <li><strong>Dynamic Selection</strong> – Users can choose roles and companies to see real-time salary comparisons.</li>
+                        <li><strong>Real-time Salary Display</strong> – Instantly updates salary data upon selection.</li>
+                        <li><strong>Industry Comparisons</strong> – Provides average salaries by role, company, and industry.</li>
+                        <li><strong>Mobile-Friendly Design</strong> – Responsive layout ensuring smooth interaction across devices.</li>
                     </ul>
                 </div>
             </article>
 
+
             <!-- Project 3: HTML and CSS Cheat Sheet -->
             <article class="project">
-                <img src="Media/Imgs/CheatSheet-ss.png" alt="HTML and CSS Cheat Sheet layout example" loading="lazy">
+                <img src="Media/Imgs/CheatSheet-ss.png" alt="Screenshot of HTML & CSS Cheat Sheet web reference guide" loading="lazy">
                 <div class="project-info">
-                    <h3>HTML and CSS Cheat Sheet</h3>
-                    <p>This webpage serves as a <strong>comprehensive HTML and CSS reference</strong> guide for developers.</p>
+                    <h3>HTML & CSS Cheat Sheet – Comprehensive Web Reference Guide</h3>
+                    <p>A <strong>responsive and interactive web reference</strong> that organizes essential HTML tags and CSS properties into clear, structured tables with practical examples and concise explanations.</p>
                     <h3>Key Features:</h3>
                     <ul>
-                        <li><strong>Responsive Tables</strong> – Organized tables for HTML tags and CSS properties.</li>
-                        <li><strong>Mobile-First Design</strong> – Simplified navigation for easy reference on smaller screens.</li>
+                        <li><strong>Organized Reference Tables</strong> – Easy-to-navigate tables that list and explain HTML elements and CSS attributes.</li>
+                        <li><strong>Interactive Code Examples</strong> – Live examples demonstrating how HTML and CSS work together in real-world scenarios.</li>
+                        
                     </ul>
                 </div>
             </article>
@@ -90,18 +95,35 @@
     </footer>
 
     <!--Menu Toggle JS-->
-    <script>
-       document.addEventListener("DOMContentLoaded", function () {
+    <script defer>
+        document.addEventListener("DOMContentLoaded", function () {
             const menuToggle = document.getElementById("menu-toggle");
             const menu = document.getElementById("menu");
-
-            menuToggle.addEventListener("click", function() {
-                menu.classList.toggle("active");
-                const expanded = menu.classList.contains("active");
-                menuToggle.setAttribute("aria-expanded", expanded);
-            });
+    
+            if (menuToggle && menu) {
+                // Toggle menu on hamburger click
+                menuToggle.addEventListener("click", function () {
+                    const isActive = menu.classList.toggle("active");
+                    menuToggle.setAttribute("aria-expanded", isActive);
+                });
+    
+                // Close menu when clicking a link
+                menu.querySelectorAll("li a").forEach(link => {
+                    link.addEventListener("click", function () {
+                        menu.classList.remove("active");
+                        menuToggle.setAttribute("aria-expanded", "false");
+                    });
+                });
+            }
+        });
+    
+        // Force Repaint Fix for Mobile Rendering Issues
+        window.addEventListener("load", function () {
+            document.body.style.display = "none";
+            document.body.offsetHeight; // Force reflow
+            document.body.style.display = "";
         });
     </script>
-
+    
 </body>
 </html>

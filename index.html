@@ -2,7 +2,7 @@
 <html lang="en-GB">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Jake Muirhead - Web Development Portfolio, showcasing my skills and passion for app development.">
     <meta property="og:title" content="Jake Muirhead - Web Development Portfolio">
     <meta property="og:description" content="Jake Muirhead's landing page and portfolio, showcasing my work and skills in web development.">
@@ -16,16 +16,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Unna:ital,wght@0,400;0,700;1,400;1,700&family=Yuji+Syuku&display=swap" rel="stylesheet">
-    <!-- Menu Toggle JS-->
-    
-    </head>
-    <body>
+</head>
+<body>
 
     <!-- Header Section -->
     <header>
         <div id="headerBar">
             <nav>
-                <button id="menu-toggle" aria-label="Open Navigation Menu">☰</button>
+                <button id="menu-toggle" aria-label="Open Navigation Menu" aria-expanded="false">☰</button>
                 <ul id="menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="projects.html">My Projects</a></li>
@@ -52,7 +50,7 @@
                 <a href="index.html" class="about-card">
                     <img src="Media/Imgs/profilePic.jpeg" alt="Jake Muirhead profile picture" loading="lazy">
                     <div class="about-text">
-                        <p>I'm a passionate web developer studying Level 3 Web/Software Development. My skills are in building interactive and user-friendly web applications.</p>
+                        <p>I'm a passionate web developer studying a Level 3 in Web/Software Development. My skills are in building interactive and user-friendly web applications.</p>
                         <p>In my spare time, I enjoy skateboarding, and I advocate for preserving local skateparks in small towns.</p>
                         <p>I've been skating for <span id="skatingTime">loading...</span>.</p>
                     </div>
@@ -83,14 +81,14 @@
     </footer>
 
     <!-- JavaScript to track time since starting skateboarding -->
-    <script>
+    <script defer>
         function updateTimeSince(startDate) {
-            const start = new Date(startDate); // Convert startDate to Date object
-
+            const start = new Date(startDate);
+    
             function update() {
-                const now = new Date(); // Get current date and time
-                const diff = now - start; // Difference in milliseconds
-
+                const now = new Date();
+                const diff = now - start;
+    
                 // Convert time difference into readable format
                 const seconds = Math.floor(diff / 1000) % 60;
                 const minutes = Math.floor(diff / (1000 * 60)) % 60;
@@ -99,33 +97,52 @@
                 const weeks = Math.floor(diff / (1000 * 60 * 60 * 24 * 7)) % 4;
                 const months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30.44)) % 12;
                 const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
-
-                // Format the output
+    
                 const formattedTime = `${years} years, ${months} months, ${weeks} weeks, ${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
-
-                // Insert into the HTML
-                document.getElementById("skatingTime").innerText = formattedTime;
+    
+                const timeElement = document.getElementById("skatingTime");
+                if (timeElement) timeElement.innerText = formattedTime;
             }
-
-            // Update every second
+    
             setInterval(update, 1000);
+            update();
         }
-
-        // Start tracking time from when you started skating
-        updateTimeSince("2013-06-28"); // Replace with your actual start date
-
-        /* Menu Toggle JS */
+    
         document.addEventListener("DOMContentLoaded", function () {
+            updateTimeSince("2013-06-28"); // Replace with actual start date
+    
             const menuToggle = document.getElementById("menu-toggle");
             const menu = document.getElementById("menu");
-
-            menuToggle.addEventListener("click", function() {
-                menu.classList.toggle("active");
-                const expanded = menu.classList.contains("active");
-                menuToggle.setAttribute("aria-expanded", expanded);
-            });
+    
+            if (menuToggle && menu) {
+                // Toggle menu on click of the hamburger button
+                menuToggle.addEventListener("click", function () {
+                    menu.classList.toggle("active");
+                    const expanded = menu.classList.contains("active");
+                    menuToggle.setAttribute("aria-expanded", expanded);
+                });
+    
+                // Close menu when any link is clicked
+                document.querySelectorAll("#menu li a").forEach(link => {
+                    link.addEventListener("click", function () {
+                        if (menu.classList.contains("active")) {
+                            menu.classList.remove("active");
+                            menuToggle.setAttribute("aria-expanded", "false");
+                        }
+                    });
+                });
+            }
+        });
+    
+        // Force Repaint Fix for Mobile Rendering Issues
+        window.addEventListener("load", function () {
+            document.body.style.display = "none";
+            document.body.offsetHeight; // Force reflow
+            document.body.style.display = "";
         });
     </script>
+    
+    
 
 </body>
 </html>

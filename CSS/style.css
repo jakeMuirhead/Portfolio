@@ -230,7 +230,7 @@ a:hover {
     box-shadow: 0 0 10px rgba(255, 111, 97, 0.8); /* Custom focus effect */
 }
 
-/*Skills Section*/
+/* Skills Section */
 #skills {
     padding: 60px 20px;
     background-color: #f4f4f4; /* Matches Projects Section */
@@ -274,7 +274,6 @@ a:hover {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-
 /* Projects Section */
 #projects {
     padding: 60px 20px;
@@ -292,7 +291,7 @@ a:hover {
     max-width: 400px;
     display: inline-block;
     border-radius: 20px;
-    max-height: 1000px;
+    max-height: fit-content;
 }
 
 .project:hover {
@@ -302,13 +301,14 @@ a:hover {
 
 .project img {
     width: 100%;
-    height: 250px;
+    height: auto;
+    aspect-ratio: 9 / 16; /* Makes images vertical like a phone screen */
     object-fit: cover;
 }
 
 .project-info {
     padding: 20px;
-    height: 73vh;
+    min-height: 700px;
 }
 
 .project-info h3 {
@@ -331,7 +331,6 @@ a:hover {
 .project-info ul li {
     margin-bottom: 5px;
 }
-
 
 /* Contact Section */
 #contactMe {
@@ -412,8 +411,14 @@ footer a:hover {
 
     .project {
         max-width: 90%;
+        height: fit-content;
     }
 
+    /* Override fixed height for project-info on mobile */
+    .project-info {
+        min-height: auto;
+        height: auto;
+    }
 
     /* Hide default menu and use slide-in effect */
     #menu {
@@ -451,7 +456,7 @@ footer a:hover {
         position: absolute;
         top: 50%;
         left: 15px;
-        transform: translateY(-50%); /* Centers vertically */
+        transform: translateY(-50%);
         background: none;
         border: none;
         font-size: 2rem;
